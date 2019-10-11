@@ -1,9 +1,10 @@
 // set up server
-var config = require('./config/config.js'), // import config variables
-  port = config.port,                       // set the port
+//var config = require('./config/config.js'), // import config variables
+  //port = config.port,                       // set the port
   express = require('express'),             // use express as the framwork
   app = express(),                          // create the server using express
   path = require('path');                   // utility module
+var port = 8000;
 
 var bodyParser = require("body-parser");
 var MasterPaperlist = [];
@@ -55,8 +56,8 @@ app.post('/SaveComputerInfo', function(req,res){
 // Add an endpoint to save a data structure as JSON to a file
 
 
-app.get('/mossGame', function(req,res){
-	res.sendFile(path.resolve(__dirname + '/../Front End/Mozzarella.html'));
+app.get('/mozzGame', function(req,res){
+	res.sendFile(path.resolve(__dirname + '/../Frontend/mozz.html'));
 });
 
 
@@ -64,7 +65,7 @@ app.get('/mossGame', function(req,res){
 
 app.get('/mozzimage/:filename', function(req,res) {
 	var filename = req.params.filename;
-	res.sendFile(path.resolve(__dirname + '/../FrontEnd/mozz_images/'+filename));
+	res.sendFile(path.resolve(__dirname + '/../Frontend/mozz_images/'+filename));
 });
 
 
