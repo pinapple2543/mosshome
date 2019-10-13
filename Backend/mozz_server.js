@@ -201,13 +201,13 @@ app.get('/Potition/gridrecive/:Gridlist', function(req,res) {
 	if(parsedGridlist == 2){
 	
 		MasterPaperlist = []; // I changed this from (it used to start with var) - Soderquist
-                Listofchange = []; // I changed this from (it used to start with var) - Soderquist
+                PaperListofchange = []; // I changed this from (it used to start with var) - Soderquist
 	   
 	   
 	   }			
 	if(parsedGridlist == 3){
 		console.log("option 3");
-		console.log(Listofchange);
+		console.log(PaperListofchange);
 		//console.log(MasterPaperlist);
 	   		res.send({
 			//'MasterPaperlist':[{val:'I'},{val:'hope'},{val:'this'},{val:'works'}]
@@ -273,7 +273,7 @@ app.post('/Potition/gridsend', function(req,res) {
 	}
 
 	if(!inlist){
-	   	Listofchange.push(data);
+	   	PaperListofchange.push(data);
 	   }
 
 	res.send({"result":"hi"});
